@@ -1,0 +1,149 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background:url(../images/bg.jpg), rgba(255,255,255,0.4);
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h2{
+    color: #fff;
+}
+p{
+    color:#c9c9c9;
+}
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.admin li a{
+    text-decoration: none;
+    color: #0062b7;
+    font-size: 30px;
+    padding: 61px 20px;
+    border: 1px solid #ddd;
+    margin: 10px 10px;
+    display: inline-block;
+    width: 350px;
+    /* height: 100px; */
+    text-align: center;
+    /* display: inline-block; */
+    float: left; 
+    /* clear: both; */
+    margin: 10px 6px;
+        transition:all ease .5s;
+        -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color:#fff;
+}
+.clear{
+    clear:both;
+}
+
+
+}
+.navbar-inverse .navbar-brand {
+}
+.navbar-inverse .navbar-nav > li > a {
+   color: #ffffff;
+}
+    .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+        color: #2a9cff;
+    }
+.navbar-nav{
+    width:81%;
+}
+
+.navbar-inverse {
+    background: rgba(0,0,0,.5);
+     border-color: transparent; 
+}
+.admin li a:hover{
+
+    background: #2a9cff;
+    color:#fff;
+}
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td, .form-horizontal .control-label, h4{
+    color:#ddd;
+}
+
+.right{
+    float:right!important;
+}
+
+.admin ul li {
+    list-style: none;
+}
+
+.admin ul{
+    margin-left:0px;
+        padding-left: 0px;
+         margin-top: 30px;
+
+}
+.btn-default {
+    color: #ffffff;
+    background-color: transparent;
+    border-color: #ddd;
+    text-transform:lowercase;
+}
+
+.btn{
+    border-radius:12px;
+}
+.unslider-arrow, .unslider-nav{
+    display:none;
+}
+
+
+
+    .unslider .rent_buttons{
+        float:right;
+        margin-top:-400px;
+        position:relative;
+        z-index:20000;
+
+    }
+        .unslider .rent_buttons a {
+            display: block;
+            margin-bottom: 30px;
+            font-size: 50px;
+            transition:all ease .5s;
+        }
+
+        .unslider .rent_buttons a:hover {
+    background: #2a9cff;
+    color: rgb(255, 255, 255);
+    border: 1px solid #732a2a;
+        }
+
+.my-slider unslider-horizontal{
+    height:500px;
+}
+
+.unslider img{
+    width:330px;
+}
+
+.unslider{
+    margin:30px auto 50px auto!important;
+    width:560px;
+}
+
+

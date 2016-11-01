@@ -1,0 +1,60 @@
+﻿
+
+@{
+    ViewBag.Title = "Overdue";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Overdue</h2>
+@{
+    MovieRentalEntities db = new MovieRentalEntities();
+
+
+    var custName = from b in db.Customers
+                   join r in db.RentalRecords on b.CustomerID equals r.CustomerID
+                   join c in db.Movies on r.MovieID equals c.MovieID
+
+                   // DateTime newDate = endDate.AddDays(2);
+
+                   //endDate = endDate.AddDays(addedDays);
+
+                   //SET `r.DueDate` = DATE_ADD(`r.DueDate` , INTERVAL 2 DAY)
+
+                   where r.DueDate < DateTime.Today
+                   //where r.DueDate < DateTime.Today.AddDays(6) || r.DueDate < DateTime.Today.AddDays(2)
+
+                   select new
+                   {
+                       cn = b.CustomerName,
+                       mn = c.MovieName,
+                       dd = r.DueDate
+                   };
+
+    <table class="table">
+        <tr>
+            <th>Due Date</th>
+            <th>Name</th>
+            <th>Movie</th>
+        </tr>
+        @foreach (var late in custName)
+        {
+            <tr>
+
+
+                <td>@string.Format("{0:MM/dd/yyyy}", late.dd)</td>
+                <td>@late.cn </td>
+                <td>@late.mn</td>
+
+
+            </tr>
+        }
+
+    </table>
+    // <p>Customer Name: @late.cn has an overdue rental for @late.mn. Due date on @string.Format("{0:MM/dd/yyyy}", late.dd)</p>
+
+
+
+}
+
+
+

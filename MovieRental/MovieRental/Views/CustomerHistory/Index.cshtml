@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MovieRental.Models.CustomerHistory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+<tr>
+
+    <th>
+        @Html.DisplayNameFor(model => model.Cust.CustomerID)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.CustMovie.MovieID)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.RentalDate)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.ReturnDate)
+    </th>
+
+
+ </tr>
+@foreach (var item in Model)
+{
+
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Cust.CustomerName)</td>
+        <td>@Html.DisplayFor(modelItem => item.CustMovie.MovieName)</td>
+        <td>@Html.DisplayFor(modelItem => item.RentalDate)</td>
+        <td>@Html.DisplayFor(modelItem => item.ReturnDate)</td>
+
+
+
+
+    </tr>
+}
+</table>

@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="admin">
+    <h2>System Administration</h2>
+    <ul>
+
+        <li><a href="/Genres/Create">Add a New Genre</a></li>
+        <li><a href="/Movies/Create">Add a New Movie</a></li>
+        <li><a href="/Movies">Remove a Movie</a></li>
+        <li><a href="/Customers/Create">Add a New Customer</a></li>
+        <li><a href="/Customers">Remove a Customer</a></li>
+
+
+
+
+    </ul>
+    <div class="clear"></div>
+
+
+    <h2>Most Recent Activities</h2>
+   @{
+           MovieRentalEntities db = new MovieRentalEntities();
+
+
+           var custName = from b in db.Customers
+                          join r in db.RentalRecords on b.CustomerID equals r.CustomerID
+                          join c in db.Movies on r.MovieID equals c.MovieID
+
+                          select new
+                          {
+                              cn = b.CustomerName,
+                              mn = c.MovieName,
+                              r = r.RentalDate,
+                              rd = r.ReturnDate
+       };
+   }
+
+    <table class="table">
+        <tr>
+       
+            <th>Name</th>
+            <th>Movie</th>
+            <th>Rental Date</th>
+            <th>Rental Date</th>
+        </tr>
+        @foreach (var late in custName)
+        {
+            <tr>
+
+
+                <td>@late.cn </td>
+                <td>@late.mn</td>
+                <td>@string.Format("{0:MM/dd/yyyy}", late.r)</td>
+                <td>@string.Format("{0:MM/dd/yyyy}", late.rd)</td>
+
+
+
+            </tr>
+        }
+
+    </table>
+       
+</div>
